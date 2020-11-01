@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { SidepanelComponent } from './sidepanel/sidepanel.component';
 import { QuotesComponent } from './quotes/quotes.component';
 import { FormsModule } from '@angular/forms';
+import { DateCountPipe } from './date-count.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     SidepanelComponent,
-    QuotesComponent
+    QuotesComponent,
+    DateCountPipe
   ],
   imports: [
     BrowserModule,

@@ -3,23 +3,28 @@
     <p>You have Quotes to share, don't hesitate.</p>
     <p class="card card-container">Share your Quotes</p>
     <div class="container-fluid">
-        <form >
+        <form #quoteForm="ngForm">
       
-          
+          {{quoteForm.value | json}}
       
            <div class="form-group">
            <label for="name"><strong> Name:</strong></label>
-           <input type="text"  name="name" class="form-control"  placeholder="Enter your Name Here...">
+           <input type="text"  name="username" class="form-control"  placeholder="Enter your Name Here..." required ngModel>
           </div>
       
-          <div class="form-group">
+          <div class="form-group"> 
               <label for="quotes"><strong>Quotes:</strong></label>
-              <input type="text" name="quote" class="form-control"  placeholder=" Your Quote...">
+              <input type="text" name="quote" class="form-control"  placeholder=" Your Quote..." required  ngModel>
           </div>
       
           <div class="form-group">
               <label for="author"><strong>quote's Author:</strong></label>
-              <input type="text" name="author" class="form-control"  placeholder="Enter the name of the Quote's author...">
+              <input type="text" name="author" class="form-control"  placeholder="Enter the name of the Quote's author..." required  ngModel>
+          </div>
+          <div class="md-form">
+            <label  for="date"> Date</label>
+            <input type='date'  class="form-control " name="Date" ngModel >
+            
           </div>
       
           <button type="submit" class="btn btn-info">Submit Quote</button>

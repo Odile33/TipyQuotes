@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Userquote} from '../userquote';
 
 @Component({
   selector: '.app-sidepanel',

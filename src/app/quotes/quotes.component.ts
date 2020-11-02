@@ -6,8 +6,8 @@ import { Userquote} from '../userquote';
   styleUrls: ['./quotes.component.css']
 })
 export class QuotesComponent implements OnInit {
-  quotes=[new Userquote("Annie","Annie","The brighter the smile the happier the heart"),
-  new Userquote("Annie","Annie","The brighter the smile the happier the heart")]
+  quotes=[new Userquote("Annie","The brighter the smile the happier the heart","Annie"),
+  new Userquote("Annie","The brighter the smile the happier the heart","Annie")]
     preNum:number
     lastNum:number
     counter:number

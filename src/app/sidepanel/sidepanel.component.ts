@@ -8,7 +8,7 @@ import { Userquote} from '../userquote';
 })
 export class SidepanelComponent implements OnInit {
 
-  userquoteModel = new Userquote ('Annie','The brighter the smile the happier the heart','Annie',);
+  userquoteModel = new Userquote ('Annie','The brighter the smile the happier the heart','Annie');
 
   constructor() { }
 

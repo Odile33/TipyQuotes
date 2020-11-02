@@ -3,7 +3,8 @@
     <p>You have Quotes to share, don't hesitate.</p>
     <p class="card card-container">Share your Quotes</p>
     <div class="container-fluid">
-        <form #quoteForm="ngForm">
+        <form #quoteForm="ngForm" (ngSubmit)="onSubmit" novalidate>
+          {{quoteForm.form.valid}}
 
            <div class="form-group">
            <label for="name"><strong> Name:</strong></label>
@@ -29,7 +30,7 @@
           </div>
           
       
-          <button type="submit" class="btn btn-info">Submit Quote</button>
+          <button [disabled]="quoteForm.form.invalid" type="submit" class="btn btn-info">Submit Quote</button>
         </form>
       </div>
       

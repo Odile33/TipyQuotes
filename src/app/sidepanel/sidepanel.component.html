@@ -8,17 +8,24 @@
            <div class="form-group">
            <label for="name"><strong> Name:</strong></label>
            <input type="text" #name="ngModel"[class.is-invalid]="name.invalid && name.touched" name="username" class="form-control"  placeholder="Enter your Name Here..."  [(ngModel)]="userquoteModel.username" required>
+           <!--<small class="text-danger" [class.d-none]="name.valid || name.untouched">Name is required</small>-->
+           <div *ngIf="name.errors && (name.invalid || name.touched)">
+            <small class="text-danger" *ngIf="name.errors.required">Name is required</small>
+             
+           </div>
           </div>
-          {{name.untouched}}
+          
       
           <div class="form-group"> 
               <label for="quotes"><strong>Quotes:</strong></label>
               <input type="text" #quote="ngModel" [class.is-invalid]="quote.invalid && quote.touched" name="quote" class="form-control"  placeholder=" Your Quote..."  [(ngModel)]="userquoteModel.quote" required>
+              <small class="text-danger" [class.d-none]="quote.valid || quote.untouched">Quote is required</small>
           </div>
       
           <div class="form-group">
               <label for="author"><strong>quote's Author:</strong></label>
               <input type="text" #author="ngModel" [class.is-invalid]="author.invalid && author.touched" name="author" class="form-control"  placeholder="Enter the name of the Quote's author..."   [(ngModel)]="userquoteModel.author" required>
+              <small class="text-danger" [class.d-none]="author.valid || author.untouched">Author is required</small>
           </div>
           
       

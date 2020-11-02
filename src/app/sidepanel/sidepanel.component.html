@@ -4,24 +4,21 @@
     <p class="card card-container">Share your Quotes</p>
     <div class="container-fluid">
         <form #quoteForm="ngForm">
-      
-          {{quoteForm.value | json}}
-          <hr />
-        
-      
+
            <div class="form-group">
            <label for="name"><strong> Name:</strong></label>
-           <input type="text"  name="username" class="form-control"  placeholder="Enter your Name Here..."  [(ngModel)]="userquoteModel.username" required>
+           <input type="text" #name="ngModel"[class.is-invalid]="name.invalid && name.touched" name="username" class="form-control"  placeholder="Enter your Name Here..."  [(ngModel)]="userquoteModel.username" required>
           </div>
+          {{name.untouched}}
       
           <div class="form-group"> 
               <label for="quotes"><strong>Quotes:</strong></label>
-              <input type="text" name="quote" class="form-control"  placeholder=" Your Quote..."  [(ngModel)]="userquoteModel.quote" required>
+              <input type="text" #quote="ngModel" [class.is-invalid]="quote.invalid && quote.touched" name="quote" class="form-control"  placeholder=" Your Quote..."  [(ngModel)]="userquoteModel.quote" required>
           </div>
       
           <div class="form-group">
               <label for="author"><strong>quote's Author:</strong></label>
-              <input type="text" name="author" class="form-control"  placeholder="Enter the name of the Quote's author..."   [(ngModel)]="userquoteModel.author" required>
+              <input type="text" #author="ngModel" [class.is-invalid]="author.invalid && author.touched" name="author" class="form-control"  placeholder="Enter the name of the Quote's author..."   [(ngModel)]="userquoteModel.author" required>
           </div>
           
       

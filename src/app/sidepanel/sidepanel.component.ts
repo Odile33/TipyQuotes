@@ -1,7 +1,8 @@
-import { Component, OnInit,Output,EventEmitter  } from '@angular/core';
+import { Component, OnInit,Output,EventEmitter, Input  } from '@angular/core';
 import { from } from 'rxjs';
 import { Userquote} from '../userquote';
 import { QuotingService } from '../quoting.service';
+import { Quote } from '@angular/compiler';
 
 @Component({
   selector: '.app-sidepanel',
@@ -9,21 +10,18 @@ import { QuotingService } from '../quoting.service';
   styleUrls: ['./sidepanel.component.css']
 })
 export class SidepanelComponent implements OnInit {
-
-  userquoteModel = new Userquote ('Annie','The brighter the smile the happier the heart','Annie');
-  @Output() emitUserquote= new EventEmitter()
+  
+  userquoteModel = new Userquote ('','','');
+  @Input () UserquoteModel = Userquote
+  @Output() emitUserquote= new EventEmitter<Userquote>()
   quoteStr:string
   quotePublisher:string
   quoteAuthor:string
   theQuote:any
 
   
-  onSubmit(  ){
-    this.theQuote= new Userquote(this.quotePublisher,this.quoteAuthor,this.quoteStr)
-    this.quoteStr=''
-    this.quoteAuthor=''
-    this.quotePublisher=''
-    this.emitUserquote.emit(this.theQuote)
+  onSubmit(){
+    this.emitUserquote.emit(this.userquoteModel);
   }
   constructor(/*private _quotingService: QuotingService*/){
 

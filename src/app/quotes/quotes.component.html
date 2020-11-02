@@ -13,13 +13,10 @@
               <div class="col-md-8">
                 <hr>
                
-                <div  class="myQuote"*ngFor="let quote of quotes; let i=index">
+                <div  *ngFor="let quote of quotes; let i=index">
                   <p appHighlight *ngIf="highestUpvote()===quote.upvotes && quote.upvotes>0">{{quote.quote}}</p>
                   <p  *ngIf="highestUpvote()!==quote.upvotes || quote.upvotes===0">{{quote.quote}}</p>
                   
-        
-                  <!-- <hr size="50"> -->
-        
         
                   <button class="btn btn-info" (click)="upvote(i)">Upvote</button>
                   <button class="btn btn-success" (click)="downvote(i)">Downvote</button>
@@ -30,6 +27,7 @@
                 </div>
               </div>
             </div>
+            
           </div>
           
 

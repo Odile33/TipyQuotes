@@ -3,8 +3,8 @@
     <p class="formintro">You have Quotes to share, don't hesitate.</p>
     <p class="card card-container formintro">Share your Quotes</p>
     <div class="container-fluid">
-        <form #quoteForm="ngForm" (ngSubmit)="onSubmit" novalidate>
-          {{quoteForm.form.valid}}
+        <form #quoteForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+         
 
            <div class="form-group">
            <label for="name"><strong> Name:</strong></label>

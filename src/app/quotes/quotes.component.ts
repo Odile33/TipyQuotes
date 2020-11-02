@@ -7,13 +7,13 @@ import { Userquote} from '../userquote';
 })
 export class QuotesComponent implements OnInit {
   quotes=[new Userquote("Annie","The brighter the smile the happier the heart","Annie"),
-  new Userquote("Annie","The brighter the smile the happier the heart","Annie")]
-    preNum:number
-    lastNum:number
+  new Userquote("Ange","The brighter the smile the happier the heart","Ange")]
+    fNum:number
+    lNum:number
     counter:number
 
-  addQuote(emittedQuote){
-    this.quotes.push(emittedQuote)
+  addQuote(Userquote){
+    this.quotes.push(Userquote)
   }
 
   upvote(i){
@@ -26,14 +26,14 @@ export class QuotesComponent implements OnInit {
     this.quotes.splice(i, 1)
   }
   highestUpvote(){
-    this.preNum = 0
-    this.lastNum = 0
+    this.fNum = 0
+    this.lNum = 0
 
     for(this.counter=0 ; this.counter < this.quotes.length; this.counter++) {
-      this.lastNum = this.quotes[this.counter].upvotes;
-      if(this.lastNum > this.preNum){this.preNum = this.lastNum}
+      this.lNum = this.quotes[this.counter].upvotes;
+      if(this.lNum > this.fNum){this.fNum = this.lNum}
     }
-    return  this.preNum
+    return  this.fNum
   }
 
   constructor() { }
